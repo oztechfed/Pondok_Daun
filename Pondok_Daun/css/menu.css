@@ -1,0 +1,222 @@
+body{
+	height:924px;
+	width: auto;
+	background-color:white;
+	background-image: url("../images/test.jpg");
+	background-size:cover;
+	background-position:center;
+	padding:0px;
+	margin:0px;
+}
+
+#wrapper{
+	height:auto;
+	width:80%;
+	margin-left:auto;
+	margin-right:auto;
+	background-color:white;
+	box-shadow: 0 4px 8px 0 black, 0 6px 20px 0 black;
+}
+
+#nav{
+	height:7%;
+	width:100%;
+	background-color:white;
+}
+
+nav{
+	width:100%;
+	background-color:green;
+}
+
+nav ul{
+	width:100%;
+	height:100%;
+	margin-left:auto;
+	margin-right:auto;
+	padding: 0;
+	background-color: rgba(255,255,255,0.5);
+	text-align:center;
+	opacity:0.7;
+}
+
+nav ul li{
+	list-style:none;
+	display:inline-block;
+	float:left;
+	margin-left:auto;
+	margin-left:auto;
+}
+
+nav ul li a{
+	padding:20px;
+	display:inline-block;
+	text-decoration:none;
+	margin-left:auto;
+	margin-right:auto;
+	text-transform:uppercase;
+	font-weight:300;
+	background-color: white;
+	color:black;
+	font-style:italic;
+}
+
+nav ul li a:hover{
+	background-color:grey;
+}
+
+.tables {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+	
+}
+
+.tables td{
+    border: 1px solid #ddd;
+    padding: 8px;
+	text-align:center;
+}
+
+.tables tr:nth-child(even){
+	background-color: #f2f2f2;
+}
+
+.tables tr:hover{
+	background-color: #ddd;
+}
+
+.dropbtn {
+    background-color: red;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+	top:50%;
+	position:relative
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+}
+
+.dropdown-content {
+	width:90%;
+	margin-left:auto;
+	margin-right:auto;
+    position: relative;
+    overflow: auto;
+    box-shadow: 20px 20px 10px 0px rgba(0, 0, 0, 0.37);
+    z-index: 1;
+	margin-bottom: 7px;
+	background-color: white;
+}
+
+#content{
+	height:93%;
+	width:auto;
+	opacity:0.8;
+	background-image: url("../images/Dessert.jpg");
+	background-size:cover;
+	background-position:center;
+}
+
+#options{
+	float:left;
+	height:auto;
+	width: 15%;
+}
+#left{
+	float:left;
+	height:auto;
+	width: 20%;
+}
+
+#right{
+	float:left;
+	height:95%;
+	width:80%;
+	background-image: url("green.jpg");
+	background-size:cover;
+	background-position:center;
+	overflow-y: scroll;
+}
+
+#menu{
+	height:auto;
+	width:100%;
+}
+
+#content p{
+	margin:0;
+	padding:0;
+}
+
+.section{
+	margin-bottom: 5%;
+	margin-top: 5%;
+	text-align:center;
+	background-color: white;
+	color:black;
+}
+
+.section h3{
+	padding: 15px;
+	font-style: italic;
+	font-size: 20px;
+}
+
+#btn{
+	padding: 16px;
+    font-size: 16px;
+    border: none;
+	color: black;
+	background-color:white;
+	cursor: pointer;
+	position: relative;
+	margin-top: 15px;
+}
+
+
+@media screen and (max-width:845px)
+{
+	.options{
+		width: 100%;
+		height:auto;
+	}
+	.section{
+		margin-bottom: 0;
+	}
+	#display{
+		width:100%;
+		height:75%;
+		overflow:scroll;
+	}
+	
+	#nav{
+		height:33%;
+	}
+	
+	nav ul li{
+		width:100%;
+		padding:0;
+		margin-top:4px;
+		margin-left:auto;
+		margin-right:auto;
+	}
+	#content{
+		height: 100%%;
+	}
+	#left{
+		width: 100%;
+	}
+
+	#right{
+		width:100%;
+		height: 615px;
+		overflow-y: scroll;
+	}
+
+}
+

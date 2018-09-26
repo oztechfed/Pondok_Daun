@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Sign Up </title>
+	<link rel="stylesheet" type = "text/css" href = "css/multi.css">
+</head>
+<body>
+	<div id = "wrapper">
+		<div id = "left">
+			<form class = "forms" action="login.php" method="post">
+				<h2 style="text-align:center"><i>Login</i></h2>
+				<h3/>Email: <br/><input type="text" name="email" required placeholder = "Enter user name"><br/>
+				<h3/>Password: <br/><input type="password" name="passwd" required placeholder = "Enter password"><p/>
+				<input type="submit" name="loginButton" value="Login">
+				<h4>New Here? Sign Up now!!</h4>
+				<h4>Back<a href="index.php" style="text-decoration:none;"> Home</a> now!!</h4>
+			</form>
+		</div>
+	
+		<div id = "right">
+			<form class = "forms" action="signup.php" method="post">
+				<h2 style="text-align:center"><i>Sign Up</i></h2>
+				<h3/>Name: <br/><input type="text" name="name" placeholder = "John Wick"><p/>
+				<h3/>Email: <br/><input type="text" name="email" placeholder = "john@mail.com"><p/>
+				<h3/>Password: <br/><input type="password" name="password" placeholder = "Enter Password"><p/>
+				<h3/>Address: <br/><input type="text" name="address" placeholder = "32 St, Adelaide"><p/>
+				<h3/>Contact: <br/><input type="number" name="contact" placeholder = "6123456789"><p/>
+				<input type="submit" name="goButton" value="Sign Up">
+				<h4>Already have Account? Login Now</h4>
+				<h4>Back<a href="index.php" style="text-decoration:none;"> Home</a> now!!</h4>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

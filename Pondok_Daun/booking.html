@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Booking </title>
+	<link rel="stylesheet" type = "text/css" href = "css/multi.css">
+</head>
+<body>
+	<div id = "wrapper">
+	<div id = "form">
+	<form class = "forms" action="booking.php" method="post">
+	<h2 style="text-align:center"><i>Book Now</i></h2>
+		<p align="center" /><select name = "title">
+			<option value="Mr.">Mr.</option>
+			<option value="Ms.">Ms.</option>
+			<option value="Mrs.">Mrs.</option>
+			<h3/><input type="text" name="name" required placeholder = "Enter name"><br/>
+		</select><br/>
+		<h3/>Date and time of booking: 
+		<br/><input name="dateInput" type="date"/><br/>
+			<select name="time">
+				<option value="12:00">12:00</option>
+				<option value="12:30">12:30</option>
+				<option value="01:00">01:00</option>
+				<option value="01:30">01:30</option>
+				<option value="02:00">02:00</option>
+				<option value="02:30">02:30</option>
+				<option value="03:00">03:00</option>
+				<option value="03:30">03:30</option>
+				<option value="04:00">04:00</option>
+				<option value="04:30">04:30</option>
+				<option value="05:00">05:00</option>
+				<option value="05:30">05:30</option>
+				<option value="06:00">06:00</option>
+				<option value="06:30">06:30</option>
+				<option value="07:00">07:00</option>
+				<option value="07:30">07:30</option>
+				<option value="08:00">08:00</option>
+			</select> pm <br/><br/>
+		<h3/>People:<br/><input name="pax" type="number" min="1" /> 
+		<input id="submit" type="submit" value="Book Now" onclick="sumitable"/>
+		<h4>New Here? <a href="signup.html"style="text-decoration:none;"> Sign Up </a> now!!</h4>
+		<h4>Back<a href="index.php"style="text-decoration:none;"> Home</a> now!!</h4>
+	</form>
+	</div>
+	</div>
+</body>
+</html>	

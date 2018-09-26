@@ -1,0 +1,116 @@
+body{
+	height:750px;
+	width: auto;
+	background-color:white;
+	background-image: url("../images/Front.jpg");
+	background-size:cover;
+	background-position:center;
+	padding:0px;
+	margin:0px;
+}
+
+#wrapper{
+	height:650px;
+	width:60%;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:5%;
+	background-image: url("../images/test.jpg");
+	background-size:cover;
+	background-position:center;
+	box-shadow: 0 4px 8px 0 black, 0 6px 20px 0 black;
+}
+
+#form{
+	height:100%;
+	width:80%;
+	margin-left:auto;
+	margin-right:auto;
+	background-color:white;
+	z-index:1;
+}
+
+#left{
+	height:100%;
+	width:48%;
+	float:left;
+	background-color:white;
+	margin-left:10px;
+	border-right:0.3px solid;
+}
+
+#right{
+	height:100%;
+	width:48%;
+	float:right;
+	margin-right:10px;
+	background-color:white;
+	border-left:0.3px solid;
+}
+
+.forms{
+	height:auto;
+	width:100%;
+	margin:auto;
+}
+
+.forms h3{
+	text-align:center;
+}
+
+.forms h4{
+	text-align:center;
+}
+
+form{
+	padding:5px;
+	width:75%;
+	height:100%;
+	margin:auto auto;
+}
+
+form input{
+	padding: 8px 10px;
+	margin:5px 0;
+	width:70%;
+	border:2px solid #808080
+}
+
+form select{
+	padding: 8px 10px;
+	width:auto;
+	border:2px solid #808080;
+	margin-left:10px;
+}
+
+form input[type=submit]
+{
+	border:2px solid #808080;
+	padding:8px 10px;
+}
+
+@media screen and (max-width:845px)
+{
+	body{
+		height:100%;
+		width:100%;
+	}
+	
+	#wrapper{
+		height:auto;
+		width:100%;
+	}
+	
+	#left{
+		width:100%;
+		float:left;
+		padding-top:40px;
+		margin-left:10px;
+	}
+	
+	#right{
+		height:auto;
+		width:100%;
+	}
+	
+}
