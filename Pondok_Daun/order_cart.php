@@ -1,3 +1,8 @@
+<?php
+	session_start();
+	require_once "files/auth.php";
+?>
+
 <!DOCTYPE html5>
 <html>
 <head>
@@ -62,10 +67,13 @@
 	
 		$conn = mysqli_connect($server, $usrname, $passwd, $dbname);
 		
+		$sID = $_COOKIE["PHPSESSID"];
+		
 		$get_food = "SELECT MI.item_name , MI.item_price, SC.qnty, SC.cartID
 					FROM menu_items AS MI, shoppingcart AS SC, menu_categories AS MC
 					WHERE SC.itemID = MI.item_id
-					AND SC.catID = MC.id";
+					AND SC.catID = MC.id
+					AND SC.sessionID = '".$sID."'";
 		
 		$get_food_result = mysqli_query($conn, $get_food) or die(mysqli_error($conn));
 		$total = 0;
@@ -96,7 +104,8 @@
 		$get_drinks = "	SELECT DI.drink_name, DI.drink_price, SC.qnty, SC.cartID
 						FROM drink_items AS DI, shoppingcart AS SC, menu_categories AS MC
 						WHERE SC.itemID = DI.drink_id 
-						AND SC.catID = MC.id";
+						AND SC.catID = MC.id
+						AND SC.sessionID = '".$sID."'";
 		
 		$get_drink_result = mysqli_query($conn, $get_drinks) or die(mysqli_error($conn));
 		

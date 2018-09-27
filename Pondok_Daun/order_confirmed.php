@@ -1,3 +1,8 @@
+<?php
+	session_start();
+	require_once "files/auth.php";
+?>
+
 <!DOCTYPE html5>
 <html>
 <head>
@@ -68,6 +73,8 @@
 	
 		$conn = mysqli_connect($server, $usrname, $passwd, $dbname);
 		
+		$sID = $_COOKIE["PHPSESSID"];
+		
 		date_default_timezone_set('Australia/Adelaide');
 		$date = date('y-m-d');
 		$today = $date;
@@ -107,7 +114,6 @@
 				$drink_name = $rows['drink_name'];
 				$drink_price = $rows['drink_price'];
 				$drink_qnty = $rows['qnty'];
-				$cart = $rows['cartID'];
 			
 				$order_details = $order_details . $drink_qnty . " x " . $drink_name ." || ";
 				$order_total = $order_total + ($drink_price * $drink_qnty);
@@ -115,13 +121,13 @@
 	
 			$order_type = $_POST['order_type'];
 		
-			$insert = "INSERT INTO `order` (`orderID`, `customerID`, `orderDetails`, `orderType`, `orderTotal`, `cartID`, `orderDate`)
-			VALUES ('NULL', '1', '".$order_details."', '".$order_type."', '".$order_total."', '".$cartID."', '".$today."')";
+			$insert = "INSERT INTO `order` (`orderID`, `customerID`, `orderDetails`, `orderType`, `orderTotal`, `orderDate`)
+			VALUES ('NULL', '1', '".$order_details."', '".$order_type."', '".$order_total."', '".$today."')";
 		
 			$insert_complete = mysqli_query($conn, $insert) or die(mysqli_error($conn));
 		
-			/*$delete_query = "DELETE FROM `shoppingcart` WHERE cartID = ".$cartID."";
-			$delete_result = mysqli_query($conn, $delete_query) or die(mysqli_error($conn));*/
+			$delete_query = "DELETE FROM `shoppingcart` WHERE sessionID = '".$sID."'";
+			$delete_result = mysqli_query($conn, $delete_query) or die(mysqli_error($conn));
 		
 			echo "<div style='background-color:white; height:30%'><p align='center' style='font-size:24px; color:black; padding-top:10%'>Thank you!<br /> Your order has been placed. <br /> Back to <a href='index.php' style='text-decoration:none;'>Home</a> page</p></div>";
 			mysqli_close($conn);

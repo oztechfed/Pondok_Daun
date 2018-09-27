@@ -1,3 +1,8 @@
+<?php
+	session_start();
+	require_once "files/auth.php";
+?>
+
 <!DOCTYPE html5>
 <html>
 <head>
@@ -61,6 +66,8 @@
 	
 		$conn = mysqli_connect($server, $usrname, $passwd, $dbname);
 		
+		$sID = $_COOKIE["PHPSESSID"];
+		
 		$get_categories = "SELECT * FROM menu_categories AS MC WHERE MC.id BETWEEN 10 AND 14 ORDER BY id";
 		
 		$get_categories_result = mysqli_query($conn, $get_categories) or die(mysqli_error($conn));
@@ -109,8 +116,8 @@
 						$cat_id = $_POST['cat_id'];
 						$drnk_id = $_POST['drink_id'];
 						
-						$order_query = "INSERT INTO `shoppingcart`(`catID`, `itemID`, `qnty`)
-						VALUES(".$cat_id.",".$drnk_id.",".$qnty.")";
+						$order_query = "INSERT INTO `shoppingcart`(`catID`, `sessionID`, `itemID`, `qnty`)
+						VALUES(".$cat_id.", '".$sID."', ".$drnk_id.",".$qnty.")";
 						
 						$place_order = mysqli_query($conn, $order_query) or die(mysqli_error($conn));
 					}

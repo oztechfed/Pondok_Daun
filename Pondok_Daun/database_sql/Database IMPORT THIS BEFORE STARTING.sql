@@ -302,7 +302,6 @@ CREATE TABLE `order` (
   `orderDetails` varchar(5000) NOT NULL,
   `orderType` varchar(50) NOT NULL,
   `orderTotal` double(6,2) DEFAULT NULL,
-  `cartID` int(10) NOT NULL,
   `orderDate` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -328,6 +327,7 @@ CREATE TABLE `resturant` (
 
 CREATE TABLE `shoppingcart` (
   `cartID` int(10) NOT NULL,
+  `sessionID` varchar(32) NOT NULL,
   `catID` int(10) NOT NULL,
   `itemID` int(10) NOT NULL,
   `qnty` int(100) NOT NULL
@@ -386,7 +386,6 @@ ALTER TABLE `menu_items`
 --
 ALTER TABLE `order`
   ADD PRIMARY KEY (`orderID`),
-  ADD KEY `cartID` (`cartID`),
   ADD KEY `customerID` (`customerID`);
 
 --
@@ -483,7 +482,6 @@ ALTER TABLE `menu_items`
 -- Constraints for table `order`
 --
 ALTER TABLE `order`
-  ADD CONSTRAINT `order_ibfk_1` FOREIGN KEY (`cartID`) REFERENCES `shoppingcart` (`cartID`),
   ADD CONSTRAINT `order_ibfk_2` FOREIGN KEY (`customerID`) REFERENCES `member` (`memberID`);
 
 --
