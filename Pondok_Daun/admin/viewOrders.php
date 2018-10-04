@@ -48,7 +48,7 @@
 			$date1 = $_POST['date1'];
 			$date2 = $_POST['date2'];
 			
-			$select = "SELECT `order`.`orderDate`, M.name, `order`.`orderType`, `order`.`orderDetails`, `order`.`orderTotal`
+			$select = "	SELECT `order`.`orderDate`, M.name, `order`.`orderType`, `order`.`orderDetails`, `order`.`orderTotal`
 						FROM member AS M, `order`
 						WHERE `order`.`customerID` = M.memberID
 						AND`orderDate` BETWEEN '".$date1."' AND '".$date2."'

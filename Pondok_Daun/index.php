@@ -45,18 +45,89 @@
 		}
 	</script>
 	
+	<script>
+	/* When the user clicks on the button, 
+	toggle between hiding and showing the dropdown content */
+	function toggle() {
+		document.getElementById("myDropdown").classList.toggle("show");
+	}
+
+	// Close the dropdown if the user clicks outside of it
+	window.onclick = function(event) 
+	{
+	if (!event.target.matches('.accdropbtn')) {
+
+		var dropdowns = document.getElementsByClassName("accdropdown-content");
+		var i;
+		for (i = 0; i < accdropdowns.length; i++) {
+		var openDropdown = accdropdowns[i];
+		if (openDropdown.classList.contains('show')) {
+			openDropdown.classList.remove('show');
+			}
+		}
+	}
+	}
+	</script>
+
+<style>
+.accdropbtn {
+    background-color: #98FB98;
+    color: black;
+    padding: 14px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+.accdropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+}
+
+.accdropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.accdropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.accdropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.accdropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+</style>
+	
 </head>
 <body>
 	<div id="wrapper">
 		<div id="top">
 			<?php if(isset($_SESSION['username'])){
-				echo "<p style='float:left; text-decoration:none; padding-left:10px;'>Welcome " . $_SESSION['username']. "</p>";
-				echo "<a href='logout.php' style='float:right; text-decoration:none; margin-right:10px; margin-top:10px;'>Log Out</a>";
 				
-				if($_SESSION['username'] === "admin")
-				{
-					echo "<a href='admin/adminHome.php' style='float:right; text-decoration:none; margin-right:10px; margin-top:10px;'><i>Admin Page</i></a>";
-				}
+				echo "<div class='accdropdown' style='float:right; text-decoration:none; margin-right:10px;'>
+						<button onclick='toggle()' class='accdropbtn'>" . $_SESSION['username']. "</button>
+						<div id='myDropdown' class='accdropdown-content'>";
+							if($_SESSION['username'] === "admin")
+							{
+								echo "<a href='admin/adminHome.php'>Admin Page</a>";
+							}
+							echo "<a href='details.php'>View Profile</a>
+								<a href='logout.php'>Log Out</a>
+						</div>
+					</div>";
+
 			} ?>
 			<a href = "signup.html"><img src="images/login.png"></a>
 		</div>

@@ -63,8 +63,7 @@
 				echo"
 				<table class='tables'>
 					<tr>
-						<td width='15%'>ID</td>
-						<td width='30%'>Customer</td>
+						<td width='45%'>Customer</td>
 						<td width='25%'>No. of People</td>
 						<td width='30%'>Time</td>
 					</tr>
@@ -79,8 +78,7 @@
 					echo"
 					<table class='tables'>
 						<tr>
-						<td width='15%'>".$id."</td>
-						<td width='30%'>".$cust_Name."</td>
+						<td width='45%'>".$cust_Name."</td>
 						<td width='25%'>".$pax." people</td>
 						<td width='30%'>".$time."</td>
 						</tr>

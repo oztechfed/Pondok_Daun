@@ -19,7 +19,7 @@
 		<a href="../logout.php"><button id="btn" style="padding:10px; font-size:14px;">Log Out</button></a>
 	</div>
     <div id="admin">
-	<h1><i>Sales Report</i></h1>
+	<h1><i>Edit Menu</i></h1>
 	</div>
 	<div id="nav">
 		<br /><br /><br />
