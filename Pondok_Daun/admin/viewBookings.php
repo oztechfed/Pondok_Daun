@@ -45,10 +45,11 @@
 			
 			if(isset($_POST['dat']))
 			{
-				echo "<h1 style='margin:0;'><i>Booking Report</i></h1><br />";
-			
+				
 				$date = $_POST['date'];
 				
+				echo "<h1 style='margin:0;'><i>Booking Report - ".$date."</i></h1><br />";
+			
 				$start = $date . " 00:00:00";
 				$end = $date . " 23:59:59";
 			

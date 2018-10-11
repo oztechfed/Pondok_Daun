@@ -161,7 +161,6 @@
 							FROM member AS M 
 							WHERE M.name = '".$sID."'";
 			
-			print($cust_query);
 							
 			$query = mysqli_query($conn, $cust_query) or die(mysqli_error($conn));
 			
@@ -233,7 +232,6 @@
 				VALUES ('NULL', '3', '".$order_details."', '".$order_type."', '".$order_total."', '".$today."')";
 			}
 			
-			print($insert);
 		
 			$insert_complete = mysqli_query($conn, $insert) or die(mysqli_error($conn));
 		

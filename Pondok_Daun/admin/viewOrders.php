@@ -43,10 +43,11 @@
 		
 		$conn = mysqli_connect($server, $usrname, $passwd, $dbname);
 		if(isset($_POST['dat'])){
-			echo "<h1 style='margin:0;'><i>Orders</i></h1><br />";
 			
 			$date1 = $_POST['date1'];
 			$date2 = $_POST['date2'];
+			
+			echo "<h1 style='margin:0;'><i>Orders between : ".$date1." and ".$date2."</i></h1><br />";
 			
 			$select = "	SELECT `order`.`orderDate`, M.name, `order`.`orderType`, `order`.`orderDetails`, `order`.`orderTotal`
 						FROM member AS M, `order`
